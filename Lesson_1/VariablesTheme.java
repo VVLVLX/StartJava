@@ -5,21 +5,21 @@ public class VariablesTheme {
         byte coresNumber = 6;
         float cpu = 2.38f;
         double maxCoreSupplyVoltage = 1.219d;
-        boolean integratedGpu = true;
+        char gpuType = 'i';
         short ram = 16;
         int frequency = 3200;
         long rom = 244242608126L;
-        char operationSystem = 'W';
+        boolean romType = "ssd" == "ssd";
 
         System.out.println("\n1. Вывод характеристик компьютера");
         System.out.println("Number of processor cores: " + coresNumber + " pcs");
         System.out.println("CPU frequency: " + cpu + " GHz");
         System.out.println("Max. core supply voltage: " + maxCoreSupplyVoltage + " V");
-        System.out.println("Integrated GPU: " + integratedGpu);
+        System.out.println("GPU type: " + gpuType + " - integrated");
         System.out.println("RAM: " + ram + " Gb");
         System.out.println("RAM frequency: " + frequency + " MHz");
         System.out.println("ROM: " + rom + " bytes");
-        System.out.println("Operating system: " + operationSystem + " - Windows");
+        System.out.println("ROM fast type: " + romType);
 
         //2. Расчет стоимости товара со скидкой
         short penPrice = 100;
