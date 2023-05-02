@@ -44,36 +44,36 @@ public class VariablesTheme {
         byteNumInc++;
         byte byteNumDec = byteNum;
         byteNumDec--;
-        System.out.println("Первоначальное значение для byte: " + byteNum + "\n" + 
-                "Значение для byte после инкремента на единицу: " + byteNumInc + "\n" + 
-                "Значение для byte после декремента на единицу: " + byteNumDec);
+        System.out.println("Первоначальное значение для byte: " + byteNum + 
+                "\nЗначение для byte после инкремента на единицу: " + byteNumInc + 
+                "\nЗначение для byte после декремента на единицу: " + byteNumDec);
 
         short shortNum = 32767;
         short shortNumInc = shortNum;
         shortNumInc++;
         short shortNumDec = shortNum;
         shortNumDec--;
-        System.out.println("Первоначальное значение для short: " + shortNum + "\n" + 
-                "Значение для short после инкремента на единицу: " + shortNumInc + "\n" + 
-                "Значение для short после декремента на единицу: " + shortNumDec);
+        System.out.println("Первоначальное значение для byte: " + shortNum + 
+                "\nЗначение для byte после инкремента на единицу: " + shortNumInc + 
+                "\nЗначение для byte после декремента на единицу: " + shortNumDec);
 
         int intNum = 2147483647;
         int intNumInc = intNum;
         intNumInc++;
         int intNumDec = intNum;
         intNumDec--;
-        System.out.println("Первоначальное значение для int: " + intNum + "\n" + 
-                "Значение для int после инкремента на единицу: " + intNumInc + "\n" + 
-                "Значение для int после декремента на единицу: " + intNumDec);
+        System.out.println("Первоначальное значение для byte: " + intNum + 
+                "\nЗначение для byte после инкремента на единицу: " + intNumInc + 
+                "\nЗначение для byte после декремента на единицу: " + intNumDec);
 
         long longNum = 9223372036854775807L;
         long longNumInc = longNum;
         longNumInc++;
         long longNumDec = longNum;
         longNumDec--;
-        System.out.println("Первоначальное значение для long: " + longNum + "\n" + 
-                "Значение для long после инкремента на единицу: " + longNumInc + "\n" + 
-                "Значение для long после декремента на единицу: " + longNumDec);
+        System.out.println("Первоначальное значение для byte: " + longNum + 
+                "\nЗначение для byte после инкремента на единицу: " + longNumInc + 
+                "\nЗначение для byte после декремента на единицу: " + longNumDec);
 
         //5. Перестановка значений переменных
         System.out.println("\n5. Перестановка значений переменных");
@@ -124,11 +124,11 @@ public class VariablesTheme {
         char underScore = '_';
         char openBracket = '(';
         char closeBracket = ')';
-        System.out.println("    " + slash + "" + backSlash + "\n" + "   " + slash + "  " + 
-                backSlash + "\n" + "  " + slash + "" + underScore + openBracket + " " + 
-                closeBracket + "" + backSlash + "\n" + " " + slash + "      " + backSlash + "\n" + 
-                slash + "" + underScore + "" + underScore + "" + underScore + "" + underScore + 
-                slash + "" + backSlash + "" + underScore + "" + underScore + "" + backSlash);
+        System.out.println("    " + slash + backSlash + "\n" + "   " + slash + "  " + 
+                backSlash + "\n" + "  " + slash + underScore + openBracket + " " + 
+                closeBracket + backSlash + "\n" + " " + slash + "      " + backSlash + "\n" + 
+                slash + underScore + underScore + underScore + underScore + 
+                slash + backSlash + underScore + underScore + backSlash);
 
         //8. Вывод количества сотен, десятков и единиц числа
         System.out.println("\n8. Вывод количества сотен, десятков и единиц числа");
