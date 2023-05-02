@@ -111,11 +111,11 @@ public class VariablesTheme {
         char atsign = '@' ;
         char caret = '^' ;
         char underscore = '_' ;
-        System.out.println((int) hash + hash + "\n" +
-                (int) ampersand  + ampersand + "\n" + 
-                (int) atsign + atsign + "\n" + 
-                (int) caret + caret + "\n" + 
-                (int) underscore + underscore);
+        System.out.println((int) hash + " " + hash + "\n" +
+                (int) ampersand +  " " + ampersand + "\n" + 
+                (int) atsign +  " " + atsign + "\n" + 
+                (int) caret +  " " + caret + "\n" + 
+                (int) underscore +  " " + underscore);
 
         //7. Вывод в консоль ASCII-арт Дюка
         System.out.println("\n7. Вывод в консоль ASCII-арт Дюка");
