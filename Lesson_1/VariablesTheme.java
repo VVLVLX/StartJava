@@ -24,7 +24,7 @@ public class VariablesTheme {
         System.out.println("\n2. Расчет стоимости товара со скидкой");
         short penPrice = 100;
         short bookPrice = 200;
-        int sumGoods = (penPrice + bookPrice);
+        int sumGoods = penPrice + bookPrice;
         float discount = 0.11f;
         float discountSum = sumGoods * discount;
         float discountPrice = sumGoods - discountSum;
@@ -40,40 +40,32 @@ public class VariablesTheme {
         //4. Вывод min и max значений целых числовых типов
         System.out.println("\n4. Вывод min и max значений целых числовых типов");
         byte byteNum = 127;
-        byte byteNumInc = byteNum;
-        byteNumInc++;
-        byte byteNumDec = byteNum;
-        byteNumDec--;
-        System.out.println("Первоначальное значение для byte: " + byteNum + 
-                "\nЗначение для byte после инкремента на единицу: " + byteNumInc + 
-                "\nЗначение для byte после декремента на единицу: " + byteNumDec);
+        System.out.println("Первоначальное значение для byte: " + byteNum);
+        byteNum++;
+        System.out.println("Значение для byte после инкремента на единицу: " + byteNum);
+        byteNum--;
+        System.out.println("Значение для byte после декремента на единицу: " + byteNum);
 
         short shortNum = 32767;
-        short shortNumInc = shortNum;
-        shortNumInc++;
-        short shortNumDec = shortNum;
-        shortNumDec--;
-        System.out.println("Первоначальное значение для byte: " + shortNum + 
-                "\nЗначение для byte после инкремента на единицу: " + shortNumInc + 
-                "\nЗначение для byte после декремента на единицу: " + shortNumDec);
+        System.out.println("Первоначальное значение для byte: " + shortNum);
+        shortNum++;
+        System.out.println("Значение для byte после инкремента на единицу: " + shortNum);
+        shortNum--;
+        System.out.println("Значение для byte после декремента на единицу: " + shortNum);
 
         int intNum = 2147483647;
-        int intNumInc = intNum;
-        intNumInc++;
-        int intNumDec = intNum;
-        intNumDec--;
-        System.out.println("Первоначальное значение для byte: " + intNum + 
-                "\nЗначение для byte после инкремента на единицу: " + intNumInc + 
-                "\nЗначение для byte после декремента на единицу: " + intNumDec);
+        System.out.println("Первоначальное значение для byte: " + intNum);
+        intNum++;
+        System.out.println("Значение для byte после инкремента на единицу: " + intNum);
+        intNum--;
+        System.out.println("Значение для byte после декремента на единицу: " + intNum);
 
         long longNum = 9223372036854775807L;
-        long longNumInc = longNum;
-        longNumInc++;
-        long longNumDec = longNum;
-        longNumDec--;
-        System.out.println("Первоначальное значение для byte: " + longNum + 
-                "\nЗначение для byte после инкремента на единицу: " + longNumInc + 
-                "\nЗначение для byte после декремента на единицу: " + longNumDec);
+        System.out.println("Первоначальное значение для byte: " + longNum);
+        longNum++;
+        System.out.println("Значение для byte после инкремента на единицу: " + longNum);
+        longNum--;
+        System.out.println("Значение для byte после декремента на единицу: " + longNum);
 
         //5. Перестановка значений переменных
         System.out.println("\n5. Перестановка значений переменных");
@@ -124,10 +116,11 @@ public class VariablesTheme {
         char underScore = '_';
         char openBracket = '(';
         char closeBracket = ')';
-        System.out.println("    " + slash + backSlash + "\n" + "   " + slash + "  " + 
-                backSlash + "\n" + "  " + slash + underScore + openBracket + " " + 
-                closeBracket + backSlash + "\n" + " " + slash + "      " + backSlash + "\n" + 
-                slash + underScore + underScore + underScore + underScore + 
+        System.out.println("    " + slash + backSlash + 
+                "\n" + "   " + slash + "  " + backSlash + 
+                "\n" + "  " + slash + underScore + openBracket + " " + closeBracket + backSlash + 
+                "\n" + " " + slash + "      " + backSlash + 
+                "\n" + slash + underScore + underScore + underScore + underScore + 
                 slash + backSlash + underScore + underScore + backSlash);
 
         //8. Вывод количества сотен, десятков и единиц числа
@@ -137,10 +130,10 @@ public class VariablesTheme {
         int tens = (givenNum % 100) / 10;
         int ones = givenNum % 10;
         int product = hundreds * tens * ones;
-        int summ = hundreds + tens + ones;
+        int sum = hundreds + tens + ones;
         System.out.println("Число " + givenNum + " содержит: " + 
                 hundreds + " сотен, " + tens + " десятков, " + ones + " единиц;\n" + 
-                "Сумма его цифр = " + summ + ", произведение его цифр = " + product + ";");
+                "Сумма его цифр = " + sum + ", произведение его цифр = " + product + ";");
 
         //9. Вывод времени
         System.out.println("\n9. Вывод времени");
