@@ -15,11 +15,11 @@ public class IfElseStatementTheme {
         } else {
             System.out.println("see section of the catalog for men");
         }
-        float length = 2.0f;
-        if (length < 1.80) {
-            System.out.println("shorter than standard bed length");
+        float height = 2.0f;
+        if (height < 1.80) {
+            System.out.println("you can't be a model");
         } else {
-            System.out.println("over standard bed length");
+            System.out.println("you have the right height for the model");
         }
         char firstLetter = "James".charAt(0);
         if (firstLetter == 'M') {
@@ -32,95 +32,82 @@ public class IfElseStatementTheme {
 
         //2. Поиск max и min числа
         System.out.println("\n2. Поиск max и min числа");
-        int number1 = 0;
-        int number2 = 0;
+        int number1 = 6;
+        int number2 = 34;
         if (number1 == number2) {
             System.out.println("Числа равны");
-        } else {
-            if (number1 > number2) {
+        } else if (number1 > number2) {
                 System.out.println("max число = " + number1 + ", min число = " + number2);
-            } else {
+        } else {
                 System.out.println("max число = " + number2 + ", min число = " + number1);
-            }
         }
 
         //3. Проверка числа
         System.out.println("\n3. Проверка числа");
-        int anyNum = 0;
+        int anyNum = 64;
+        int checkNum = 0;
         System.out.println(anyNum);
-        if (anyNum == 0) {
+        if (anyNum == checkNum) {
             System.out.println("Число является нулём");
         } else {
-            if (anyNum % 2 == 0) {
+            if (anyNum % 2 == checkNum) {
                 System.out.println("Чётное");
             } else {
                 System.out.println("Нечётное");
             }
-            if (anyNum > 0) {
+            if (anyNum > checkNum) {
                 System.out.println("Положительное");
             } else {
                 System.out.println("Отрицательное");
             }
         }
-
+/*
         //4. Поиск одинаковых цифр в числах
         System.out.println("\n4. Поиск одинаковых цифр в числах");
-        int num1 = 456;
-        int num2 = 789;
-        System.out.println("Первое число = " + num1 + "; Второе число = " + num2 + ";");
-        int firstNum1 = num1 / 100;
-        int secondNum1 = (num1 / 10) % 10;
-        int thirdNum1 = num1 % 10;
-        int firstNum2 = num2 / 100;
-        int secondNum2 = (num2 / 10) % 10;
-        int thirdNum2 = num2 % 10;
+        int num1 = 458;
+        int num2 = 458;
+        int hundredsDig;
+        int tensDig;
+        int onesDig;
+        char hundreds;
+        char tens;
+        char ones;
 
-        if (firstNum1 == firstNum2) {
-            if (secondNum1 == secondNum2) {
-                if (thirdNum1 == thirdNum2) {
-                    System.out.println("Одинаковые цифр: " + firstNum1 + "; " + 
-                            secondNum1 + "; " + thirdNum1 + ";\n" + "Номера разрядов: 1; 2; 3;");
-                } else {
-                    System.out.println("Одинаковые цифр: " + firstNum1 + 
-                            "; " + secondNum1 + ";\n" + "Номера разрядов: 1; 2;");
-                }
-            } else if (thirdNum1 == thirdNum2) {
-                System.out.println("Одинаковые цифр: " + firstNum1 + 
-                        "; " + thirdNum1 + ";\n" + "Номера разрядов: 1; 3;");
-            } else {
-                System.out.println("Одинаковые цифр: " + 
-                        firstNum1 + ";\n" + "Номера разрядов: 1;");
-            }
-        } else if (secondNum1 == secondNum2) {
-            if (thirdNum1 == thirdNum2) {
-                System.out.println("Одинаковые цифр: " + secondNum1 + 
-                        "; " + thirdNum1 + ";\n" + "Номера разрядов: 2; 3;");
-            } else {
-                System.out.println("Одинаковые цифр: " + 
-                        secondNum1 + ";\n" + "Номера разрядов: 2;");
-            }
-        } else if (thirdNum1 == thirdNum2) {
-                System.out.println("Одинаковые цифр: " + 
-                        thirdNum1 + ";\n" + "Номера разрядов: 3;");
+        if (num1 / 100 == num2 / 100) {
+            hundredsDig = num1 / 100;
+            hundreds = '1';
         } else {
-            System.out.println("Одинаковых цифр нет;");
+            hundredsDig = ;
+            hundreds = 'x';
         }
-
+        if ((num1 / 10) % 10 == (num2 / 10) % 10) {
+            tensDig = (num1 / 10) % 10;
+            tens = '2';
+        } else {
+            tensDig = ;
+            tens = 'x';
+        }
+        if (num1 % 10 == num2 % 10) {
+            onesDig = num1 % 10;
+            ones = '3';
+        } else {
+            onesDig = ;
+            ones = 'x';
+        }
+        System.out.println("Первое число = " + num1 + "; Второе число = " + num2 + ";" + 
+                "\nОдинаковые цифры: " + hundredsDig + "; " + tensDig + "; " + onesDig + "; " + 
+                "\nНомера разрядов: " + hundreds + "; " + tens + "; " + ones + "; ");
+*/
         //5. Определение символа по его коду
         System.out.println("\n5. Определение символа по его коду");
-        char charHex = '\u0057';
+        char charHex = '\u0024';
         System.out.println("Заданный символ: " + (char) charHex);
-        if ((int) charHex >= 123) {
-            System.out.println("не буква и не число");
-        } else if ((int) charHex >= 97) {
+
+        if ((int) charHex >= 97 && (int) charHex <= 122) {
             System.out.println("маленькая буква");
-        } else if ((int) charHex >= 91) {
-            System.out.println("не буква и не число");
-        } else if ((int) charHex >= 65) {
+        } else if ((int) charHex >= 65 && (int) charHex <= 90) {
             System.out.println("большая буква");
-        } else if ((int) charHex >= 58) {
-            System.out.println("не буква и не число");
-        } else if ((int) charHex >= 48) {
+        } else if ((int) charHex >= 48 && (int) charHex <= 57) {
             System.out.println("цифра");
         } else {
             System.out.println("не буква и не число");
@@ -129,153 +116,51 @@ public class IfElseStatementTheme {
         //6. Подсчет суммы вклада и начисленных банком %
         System.out.println("\n6. Подсчет суммы вклада и начисленных банком %");
         int deposit = 300000;
-
         System.out.println("Сумма вклада = " + deposit + " руб.");
+        float rate;
         if (deposit < 100000) {
-            double charges = deposit * 0.05;
-            double total = deposit + charges;
-            System.out.println("Сумма начисленных %: " + charges + 
-                    " руб.\n" + "Итого на счёте: " + total + " руб.");
+            rate = 0.05f;
         } else if (deposit >= 300000) {
-            double charges = deposit * 0.1;
-            double total = deposit + charges;
-            System.out.println("Сумма начисленных %: " + charges + 
-                    " руб.\n" + "Итого на счёте: " + total + " руб.");
+            rate = 0.1f;
         } else {
-            double charges = deposit * 0.07;
-            double total = deposit + charges;
-            System.out.println("Сумма начисленных %: " + charges + 
-                    " руб.\n" + "Итого на счёте: " + total + " руб.");
+            rate = 0.07f;
         }
+        float charges = deposit * rate;
+        float total = deposit + charges;
+        System.out.println("Сумма начисленных %: " + charges + " руб.\n" + 
+            "Итого на счёте: " + total + " руб.");
 
         //7.Определение оценки по предметам
         System.out.println("\n7.Определение оценки по предметам");
-        float histPct = 0.59f;
-        float progPct = 0.91f;
+        double histPct = 0.59d;
+        double progPct = 0.91d;
+        double avgPct = (histPct + progPct) / 2 * 100;
+        double histGrade;
+        double progGrade;
 
         if (histPct > 0.91) {
-            if (progPct > 0.91) {
-                float histGrade = 5f;
-                float progGrade = 5f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            } else if (progPct > 0.73) {
-                float histGrade = 5f;
-                float progGrade = 4f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            } else if (progPct > 0.60) {
-                float histGrade = 5f;
-                float progGrade = 3f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            } else {
-                float histGrade = 5f;
-                float progGrade = 2f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            }
+            histGrade = 5;
         } else if (histPct > 0.73) {
-            if (progPct > 0.91) {
-                float histGrade = 4f;
-                float progGrade = 5f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            } else if (progPct > 0.73) {
-                float histGrade = 4f;
-                float progGrade = 4f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            } else if (progPct > 0.60) {
-                float histGrade = 4f;
-                float progGrade = 3f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            } else {
-                float histGrade = 4f;
-                float progGrade = 2f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            }
+            histGrade = 4;
         } else if (histPct > 0.60) {
-            if (progPct > 0.91) {
-                float histGrade = 3f;
-                float progGrade = 5f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            } else if (progPct > 0.73) {
-                float histGrade = 3f;
-                float progGrade = 4f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            } else if (progPct > 0.60) {
-                float histGrade = 3f;
-                float progGrade = 3f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            } else {
-                float histGrade = 3f;
-                float progGrade = 2f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            }
+            histGrade = 3;
         } else {
-            if (progPct > 0.91) {
-                float histGrade = 2f;
-                float progGrade = 5f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            } else if (progPct > 0.73) {
-                float histGrade = 2f;
-                float progGrade = 4f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            } else if (progPct > 0.60) {
-                float histGrade = 2f;
-                float progGrade = 3f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            } else {
-                float histGrade = 2f;
-                float progGrade = 2f;
-                float avgGrade = (histGrade + progGrade) / 2;
-                System.out.println("Оценка по истории = " + histGrade +
-                        "\nОценка по программированию = " + progGrade + 
-                        "\nСредний балл оценок по предметам = " + avgGrade);
-            }
+            histGrade = 2;
         }
-        float avgPct = (histPct + progPct) / 2 * 100;
-        System.out.println("Средний % по предметам = " + avgPct);
+        if (progPct > 0.91) {
+            progGrade = 5;
+        } else if (progPct > 0.73) {
+            progGrade = 4;
+        } else if (progPct > 0.60) {
+            progGrade = 3;
+        } else {
+            progGrade = 2;
+        }
+        double avgGrade = (histGrade + progGrade) / 2;
+        System.out.println("Оценка по истории = " + histGrade +
+                "\nОценка по программированию = " + progGrade + 
+                "\nСредний балл оценок по предметам = " + avgGrade + 
+                "\nСредний % по предметам = " + avgPct);
 
         //8.Расчет прибыли за год
         System.out.println("\n8.Расчет прибыли за год");
@@ -284,11 +169,11 @@ public class IfElseStatementTheme {
         int grossProfit = sales - costPrice;
         int rent = 5000;
         int profitBeforTax = grossProfit - rent;
-        int annualProfit = 12 * profitBeforTax;
+        int annualProfit = profitBeforTax * 12;
         if (annualProfit > 0) {
-            System.out.println("Прибыль за год: " + "+" + profitBeforTax);
+            System.out.println("Прибыль за год: " + "+" + annualProfit);
         } else {
-            System.out.println("Прибыль за год: " + profitBeforTax);
+            System.out.println("Прибыль за год: " + annualProfit);
         }
 
         //9.Подсчет количества банкнот
