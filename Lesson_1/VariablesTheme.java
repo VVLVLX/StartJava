@@ -47,25 +47,25 @@ public class VariablesTheme {
         System.out.println("Значение для byte после декремента на единицу: " + byteNum);
 
         short shortNum = 32767;
-        System.out.println("Первоначальное значение для byte: " + shortNum);
+        System.out.println("Первоначальное значение для short: " + shortNum);
         shortNum++;
-        System.out.println("Значение для byte после инкремента на единицу: " + shortNum);
+        System.out.println("Значение для short после инкремента на единицу: " + shortNum);
         shortNum--;
-        System.out.println("Значение для byte после декремента на единицу: " + shortNum);
+        System.out.println("Значение для short после декремента на единицу: " + shortNum);
 
         int intNum = 2147483647;
-        System.out.println("Первоначальное значение для byte: " + intNum);
+        System.out.println("Первоначальное значение для int: " + intNum);
         intNum++;
-        System.out.println("Значение для byte после инкремента на единицу: " + intNum);
+        System.out.println("Значение для int после инкремента на единицу: " + intNum);
         intNum--;
-        System.out.println("Значение для byte после декремента на единицу: " + intNum);
+        System.out.println("Значение для int после декремента на единицу: " + intNum);
 
         long longNum = 9223372036854775807L;
-        System.out.println("Первоначальное значение для byte: " + longNum);
+        System.out.println("Первоначальное значение для long: " + longNum);
         longNum++;
-        System.out.println("Значение для byte после инкремента на единицу: " + longNum);
+        System.out.println("Значение для long после инкремента на единицу: " + longNum);
         longNum--;
-        System.out.println("Значение для byte после декремента на единицу: " + longNum);
+        System.out.println("Значение для long после декремента на единицу: " + longNum);
 
         //5. Перестановка значений переменных
         System.out.println("\n5. Перестановка значений переменных");
@@ -116,11 +116,11 @@ public class VariablesTheme {
         char underScore = '_';
         char openBracket = '(';
         char closeBracket = ')';
-        System.out.println("    " + slash + backSlash + 
-                "\n" + "   " + slash + "  " + backSlash + 
-                "\n" + "  " + slash + underScore + openBracket + " " + closeBracket + backSlash + 
-                "\n" + " " + slash + "      " + backSlash + 
-                "\n" + slash + underScore + underScore + underScore + underScore + 
+        System.out.println("    " + slash + backSlash + "\n" + 
+                "   " + slash + "  " + backSlash + "\n" + 
+                "  " + slash + underScore + openBracket + " " + closeBracket + backSlash + "\n" + 
+                " " + slash + "      " + backSlash + "\n" + 
+                slash + underScore + underScore + underScore + underScore + 
                 slash + backSlash + underScore + underScore + backSlash);
 
         //8. Вывод количества сотен, десятков и единиц числа
