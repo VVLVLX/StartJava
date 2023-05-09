@@ -6,12 +6,10 @@ public class CyclesTheme {
         int startNum = -10;
         int finishNum = 21;
         int i = startNum;
-        int total = 0;
         int sumEven = 0;
         int sumOdd = 0;
         do {
-            total += i;
-            if (total % 2 == 0) {
+            if (i % 2 == 0) {
                 sumEven += i;
             } else {
                 sumOdd += i;
@@ -64,8 +62,8 @@ public class CyclesTheme {
             System.out.print(j + " ");
         }
 
-        //3. Вывод реверсивного числа и суммы его цифр
-        System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр");
+        //3.Вывод реверсивного числа и суммы его цифр
+        System.out.println("\n\n3.Вывод реверсивного числа и суммы его цифр");
         int givenNum = 1234;
         int reverseNum = 0;
         int sumDigs = 0;
@@ -78,56 +76,151 @@ public class CyclesTheme {
             }
         }
         System.out.println("Исходное число в обратном порядке = " + reverseNum + 
-                "\nСумма цифр числа 1234 = " + sumDigs);
-/*
+                "\nСумма цифр числа " + givenNum + " = " + sumDigs);
+
         //4. Вывод чисел на консоль в несколько строк
-        //https://ru.stackoverflow.com/questions/37944/%D0%92%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D1%86%D0%B8%D0%BA%D0%BB%D1%8B-while
         System.out.println("\n4. Вывод чисел на консоль в несколько строк");
-        int beginNum = 1;
-        int endNum = 24;
+        int leftIncludig = 1;
+        int rightExcluding = 24;
         int step = 2;
-
-        for (int m = (beginNum); m > (beginNum - 1) && m < (endNum + 1) && (m-1) - step * 4 <= 0; m += step) {
-            System.out.print(m + " ");
-        }
-        for (int m = (beginNum); m > (beginNum - 1) && m < (endNum + 1) && (m-1) - step * 9 <= 0; m += step) {
-            System.out.print(m + " ");
-        }
-*/
-        //5. Проверка количества двоек на четность/нечетность
-        System.out.println("\n5. Проверка количества двоек на четность/нечетность");
-        int hardNum = 3242592;
-        int cycleNum = hardNum;
-        int deucesCounter = 0; 
-        while (cycleNum != 0) {
-            if (cycleNum % 10 == 2) {
-                deucesCounter++;
-            }
-            cycleNum /= 10;
-        }
-        if (deucesCounter % 2 == 0) {
-            System.out.println("Число " + hardNum + 
-                    " содержит чётное количество двоек, " + deucesCounter);
-        } else {
-            System.out.println("Число " + hardNum + 
-                    " содержит нечётное количество двоек, " + deucesCounter);
-        }
-
-        //6. Отображение фигур в консоли
-        System.out.println("\n6. Проверка количества двоек на четность/нечетность");
-        for(int o = 0; o < 5; o++) {
-            System.out.println("**********");
-        }
-        int p = 5;
-        int q = 1;
-        while (p > 0) {
-            while (q <= p) {
-                System.out.print("#");
-                q++;
+        int stringLegth = 5;
+        for (int v = leftIncludig; v < rightExcluding; v += step) {
+            for (int w = 0; w < stringLegth; w++) {
+                if (v < rightExcluding) {
+                    System.out.printf("%2d ", v);
+                } else {
+                    System.out.printf("%2d ", 0);
+                }
+                v += 2;
             }
             System.out.println("");
-            q = 1;
-            p--;
+            v -= 2;
+        }
+
+        //5.Проверка количества двоек на четность/нечетность
+        System.out.println("\n5.Проверка количества двоек на четность/нечетность");
+        int hardNum = 3242592;
+        int k = hardNum;
+        int twoCounter = 0; 
+        while (k != 0) {
+            if (k % 10 == 2) {
+                twoCounter++;
+            }
+            k /= 10;
+        }
+        if (twoCounter % 2 == 0) {
+            System.out.println("Число " + hardNum + 
+                    " содержит чётное количество двоек, " + twoCounter + ";");
+        } else {
+            System.out.println("Число " + hardNum + 
+                    " содержит нечётное количество двоек, " + twoCounter + ";");
+        }
+
+        //6.Отображение фигур в консоли
+        System.out.println("\n6. Проверка количества двоек на четность/нечетность");
+        for(int o = 0; o < 5; o++) {
+            for (int p = 0; p < 11; p++) {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+
+        int q = 5;
+        int r = 1;
+        while (q > 0) {
+            while (r <= q) {
+                System.out.print("#");
+                r++;
+            }
+            System.out.println("");
+            r = 1;
+            q--;
+        }
+
+        int s = 1;
+        int t = 1;
+        do {
+            do {
+                System.out.print("$");
+                t++;
+            } while (t <= s);
+            System.out.println("");
+            t = 1;
+            s++;
+        } while (s > 0 && s < 3);
+        do {
+            do {
+                System.out.print("$");
+                t++;
+            } while (t <= s);
+            System.out.println("");
+            t = 1;
+            s--;
+        } while (s > 0);
+
+        //7.Отображение ASCII-символов
+        System.out.println("\n7.Отображение ASCII-символов");
+        System.out.printf("%4s %4s %n", "Dec", "Char");
+        for (int u = 0; u <= 122; u++) {
+            if (u >= 0 && u <= 47 && u % 2 != 0) {
+                System.out.printf("%4d", u);
+                System.out.printf("%4c%n", u);
+            } else if (u >= 97 && u % 2 == 0) {
+                System.out.printf("%4d", u);
+                System.out.printf("%4c%n", u, u);
+            }
+        }
+        //8.Проверка, является ли число палиндромом
+        System.out.println("\n8.Проверка, является ли число палиндромом");
+        long palindrome = 12345654321L;
+        long palindromeCheck = palindrome;
+        long unknown = 0;
+        while (palindromeCheck != 0) {
+            unknown += palindromeCheck % 10;
+            palindromeCheck /= 10;
+            if (palindromeCheck != 0) {
+                unknown *= 10;
+            }
+        }
+        if (palindrome == unknown) {
+            System.out.println("Вау, число " + palindrome + " настоящий ПАЛИНДРОМ!");
+        } else {
+            System.out.println("Эксперты утверждают, что число " + palindrome + " не ПАЛИНДРОМ!");
+        }
+
+        //9.Определение, является ли число счастливым
+        System.out.println("\n9.Определение, является ли число счастливым");
+        int luckyNum = 999999;
+        int partFirst = luckyNum / 1000;
+        int sumFirstDigs = 0;
+        while (partFirst != 0) {
+            sumFirstDigs += partFirst % 10;
+            partFirst /= 10;
+        }
+        int partLast = luckyNum % 1000;
+        int sumLastDigs = 0;
+        while (partLast != 0) {
+            sumLastDigs += partLast % 10;
+            partLast /= 10;
+        }
+        boolean isLucky = sumFirstDigs == sumLastDigs;
+        System.out.println("Сумма цифр " + (luckyNum / 1000) + " = " + sumFirstDigs + "; " + 
+                "Сумма цифр " + (luckyNum % 1000) + " = " + sumLastDigs + ";\n" + 
+                (isLucky ? luckyNum + " - Счастливое число!" : luckyNum + " - Обычное число."));
+
+        //10.Вывод таблицы умножения Пифагора
+        System.out.println("\n10.Вывод таблицы умножения Пифагора");
+        System.out.print("   |");
+        for (int x = 2; x < 10; x++) {
+            System.out.printf("%2d ", x);
+        }
+        System.out.println("\n---|------------------------");
+        for (int x = 2; x < 10; x++) {
+            System.out.printf("%2d |", x);
+            for (int y = 2; y < 10; y++) {
+                System.out.printf("%2d ", x * y);
+            }
+            System.out.println("");
         }
     }
 }
