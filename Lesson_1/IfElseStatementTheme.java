@@ -32,14 +32,14 @@
 
         //2.Поиск max и min числа
         System.out.println("\n2. Поиск max и min числа");
-        int number1 = 6;
-        int number2 = 34;
-        if (number1 == number2) {
+        int num1 = 6;
+        int num2 = 34;
+        if (num1 == num2) {
             System.out.println("Числа равны");
-        } else if (number1 > number2) {
-            System.out.println("max число = " + number1 + ", min число = " + number2);
+        } else if (num1 > num2) {
+            System.out.println("max число = " + num1 + ", min число = " + num2);
         } else {
-            System.out.println("max число = " + number2 + ", min число = " + number1);
+            System.out.println("max число = " + num2 + ", min число = " + num1);
         }
 
         //3.Проверка числа
@@ -63,8 +63,8 @@
 
         //4.Поиск одинаковых цифр в числах
         System.out.println("\n4. Поиск одинаковых цифр в числах");
-        int num1 = 123;
-        int num2 = 223;
+        num1 = 123;
+        num2 = 456;
         int hundredsNum1 = num1 / 100;
         int tensNum1 = (num1 / 10) % 10;
         int onesNum1 = num1 % 10;
@@ -72,9 +72,6 @@
         int tensNum2 = (num2 / 10) % 10;
         int onesNum2 = num2 % 10;
         System.out.println("Число 1 = " + num1 + "; Число 2 = " + num2 + ";");
-        if (hundredsNum1 != hundredsNum2 && tensNum1 != tensNum2 && onesNum1 != onesNum2) {
-            System.out.println("В одинаковых разрядах нет равных цифр!");
-        }
         if (hundredsNum1 == hundredsNum2) {
             System.out.println("Разряды сотен совпадают, числа равны " + hundredsNum1);
         }
@@ -84,16 +81,19 @@
         if (onesNum1 == onesNum2) {
             System.out.println("Разряды единиц совпадают, числа равны " + onesNum1);
         }
+        if (hundredsNum1 != hundredsNum2 && tensNum1 != tensNum2 && onesNum1 != onesNum2) {
+            System.out.println("В одинаковых разрядах нет равных цифр!");
+        }
 
         //5.Определение символа по его коду
         System.out.println("\n5. Определение символа по его коду");
-        char charHex = '\u0024';
-        System.out.println("Заданный символ: " + (char) charHex);
-        if (charHex >= 97 && charHex <= 122) {
+        char unknownChar = '\u0057';
+        System.out.println("Заданный символ: " + unknownChar);
+        if (unknownChar >= 97 && unknownChar <= 122) {
             System.out.println("маленькая буква");
-        } else if (charHex >= 65 && charHex <= 90) {
+        } else if (unknownChar >= 65 && unknownChar <= 90) {
             System.out.println("большая буква");
-        } else if (charHex >= 48 && charHex <= 57) {
+        } else if (unknownChar >= 48 && unknownChar <= 57) {
             System.out.println("цифра");
         } else {
             System.out.println("не буква и не число");
@@ -108,36 +108,37 @@
             rate = 0.05f;
         } else if (deposit >= 300000) {
             rate = 0.1f;
-        } 
+        }
         float charges = deposit * rate;
         float total = deposit + charges;
         System.out.println("Сумма начисленных %: " + charges + " руб.\n" + 
-            "Итого на счёте: " + total + " руб.");
+                "Итого на счёте: " + total + " руб.");
+
 
         //7.Определение оценки по предметам
         System.out.println("\n7.Определение оценки по предметам");
-        double historyRate = 0.59d;
-        double codingRate = 0.91d;
-        double historyGrade = 2d;
-        double codingGrade = 2d;
+        double historyRate = 0.59;
+        double historyGrade = 2;
         if (historyRate > 0.91) {
             historyGrade = 5;
         } else if (historyRate > 0.73) {
             historyGrade = 4;
         } else if (historyRate > 0.60) {
             historyGrade = 3;
-        } 
-        if (codingRate > 0.91) {
-            codingGrade = 5;
-        } else if (codingRate > 0.73) {
-            codingGrade = 4;
-        } else if (codingRate > 0.60) {
-            codingGrade = 3;
         }
-        double avgGrade = (historyGrade + codingGrade) / 2;
-        double avgRate = (historyRate + codingRate) / 2 * 100;
+        double csRate = 0.91;
+        double csGrade = 2;
+        if (csRate > 0.91) {
+            csGrade = 5;
+        } else if (csRate > 0.73) {
+            csGrade = 4;
+        } else if (csRate > 0.60) {
+            csGrade = 3;
+        }
+        double avgGrade = (historyGrade + csGrade) / 2;
+        double avgRate = (historyRate + csRate) / 2 * 100;
         System.out.println("Оценка по истории = " + historyGrade +
-                "\nОценка по программированию = " + codingGrade + 
+                "\nОценка по программированию = " + csGrade + 
                 "\nСредний балл оценок по предметам = " + avgGrade + 
                 "\nСредний % по предметам = " + avgRate);
 
@@ -153,52 +154,52 @@
             System.out.println("Прибыль за год: " + annualProfit);
         }
 
-       //9.Подсчет количества банкнот
+        //9.Подсчет количества банкнот
         System.out.println("\n9.Подсчет количества банкнот");
-        int availableHundreds = 10;
-        int availableTens = 5;
-        int availableOnes = 50;
         int requiredCash = 567;
-        int requiredHundreds = requiredCash / 100;
-        int requiredTens = (requiredCash / 10) % 10;
-        int requiredOnes = requiredCash % 10;
-        int changeTensOnes = (requiredTens - availableTens) * 10 + requiredOnes;
-        int changeHundredsTens = (requiredHundreds - availableHundreds) * 10 + requiredTens;
-        int changeHundredsOnes = (changeHundredsTens - availableTens) * 10 + requiredOnes;
-        int giveOutHundreds = 0;
-        int giveOutTens = 0;
-        int giveOutOnes = 0;
-        if (availableHundreds >= requiredHundreds) {
-            giveOutHundreds = requiredHundreds;
-            if (availableTens >= requiredTens) {
-                giveOutTens = requiredTens;
-                if (availableOnes >= requiredOnes) {
-                    giveOutOnes = requiredOnes;
-                } else {
-                    System.out.println ("Недостаточно банкнот для выдачи требуемой суммы! 1");
-                }
-            } else if (availableOnes >= changeTensOnes) {
-                giveOutTens = availableTens;
-                giveOutOnes = changeTensOnes;
-            } else {
-                System.out.println ("Недостаточно банкнот для выдачи требуемой суммы! 2");
-            }
-        } else if (availableTens >= changeHundredsTens) {
-            giveOutHundreds = availableHundreds;
-            if (availableOnes >= requiredOnes) {
-                giveOutTens = changeHundredsTens;
-                giveOutOnes = requiredOnes;
-            } else {
-                System.out.println ("Недостаточно банкнот для выдачи требуемой суммы! 3");
-            }
-        } else if (availableOnes >= changeHundredsOnes) {
-            giveOutHundreds = availableHundreds;
-            giveOutTens = availableTens;
-            giveOutOnes = changeHundredsOnes;
+        int required100 = requiredCash / 100;
+        int required10 = (requiredCash / 10) % 10;
+        int required1 = requiredCash % 10;
+        int available100 = 10;
+        int available10 = 5;
+        int available1 = 50;
+        int change101 = (required10 - available10) * 10 + required1;
+        int change1001 = (((required100 - available100) * 10) - available10) * 10 + required1;
+        int change10010 = (required100 - available100) * 10 + required10;
+        if ((available100 >= required100 &&
+                ((available10 >= required10 && available1 < required1)
+                || (available1 < change101))) ||
+                (available100 < required100 &&
+                ((available10 >= change10010 && available1 < required1)
+                || (available10 < change10010 && available1 < change1001)))) {
+            System.out.println ("Недостаточно банкнот для выдачи требуемой суммы!");
         } else {
-            System.out.println ("Недостаточно банкнот для выдачи требуемой суммы! 4");
+            int giveOut100 = 0;
+            int giveOut10 = 0;
+            int giveOut1 = 0;
+            if (available100 < required100) {
+                giveOut100 = available100;
+                if (available10 < change10010 && available1 >= change1001) {
+                    giveOut10 = available10;
+                    giveOut1 = change1001;
+                }
+                if (available10 > change10010 && available1 >= required1) {
+                    giveOut10 = change10010;
+                    giveOut1 = required1;
+                }
+            } else if (available100 >= required100) {
+                giveOut100 = required100;
+                if (available10 < required10 && available1 >= change101) {
+                    giveOut10 = available10;
+                    giveOut1 = change101;
+                }
+                if (available10 >= required10 && available1 >= required1) {
+                    giveOut10 = required10;
+                    giveOut1 = required1;
+                }
+            }
+        System.out.println("Требуемое количество банкнот: 100$: " + giveOut100 + "; 10$: " +
+                giveOut10 + "; 1$: " + giveOut1 + "; " + "\nСумма к выдаче: " + requiredCash);
         }
-        System.out.println("Требуемое количество банкнот: 100$: " + giveOutHundreds + "; 10$: " +
-                giveOutTens + "; 1$: " + giveOutOnes + "; " + "\nСумма к выдаче: " + requiredCash);
     }
 }
