@@ -72,28 +72,29 @@
         int tensNum2 = (num2 / 10) % 10;
         int onesNum2 = num2 % 10;
         System.out.println("Число 1 = " + num1 + "; Число 2 = " + num2 + ";");
-        if (hundredsNum1 == hundredsNum2) {
-            System.out.println("Разряды сотен совпадают, числа равны " + hundredsNum1);
-        }
-        if (tensNum1 == tensNum2) {
-            System.out.println("Разряды десятков совпадают, числа равны " + tensNum1);
-        }
-        if (onesNum1 == onesNum2) {
-            System.out.println("Разряды единиц совпадают, числа равны " + onesNum1);
-        }
         if (hundredsNum1 != hundredsNum2 && tensNum1 != tensNum2 && onesNum1 != onesNum2) {
             System.out.println("В одинаковых разрядах нет равных цифр!");
+        } else {
+            if (hundredsNum1 == hundredsNum2) {
+                System.out.println("Разряды сотен совпадают, числа равны " + hundredsNum1);
+            }
+            if (tensNum1 == tensNum2) {
+                System.out.println("Разряды десятков совпадают, числа равны " + tensNum1);
+            }
+            if (onesNum1 == onesNum2) {
+                System.out.println("Разряды единиц совпадают, числа равны " + onesNum1);
+            }
         }
 
         //5.Определение символа по его коду
         System.out.println("\n5. Определение символа по его коду");
         char unknownChar = '\u0057';
         System.out.println("Заданный символ: " + unknownChar);
-        if (unknownChar >= 97 && unknownChar <= 122) {
+        if (unknownChar >= 'a' && unknownChar <= 'z') {
             System.out.println("маленькая буква");
-        } else if (unknownChar >= 65 && unknownChar <= 90) {
+        } else if (unknownChar >= 'A' && unknownChar <= 'Z') {
             System.out.println("большая буква");
-        } else if (unknownChar >= 48 && unknownChar <= 57) {
+        } else if (unknownChar >= '0' && unknownChar <= '9') {
             System.out.println("цифра");
         } else {
             System.out.println("не буква и не число");
@@ -198,8 +199,8 @@
                     giveOut1 = required1;
                 }
             }
-        System.out.println("Требуемое количество банкнот: 100$: " + giveOut100 + "; 10$: " +
-                giveOut10 + "; 1$: " + giveOut1 + "; " + "\nСумма к выдаче: " + requiredCash);
+            System.out.println("Требуемое количество банкнот: 100$: " + giveOut100 + "; 10$: " +
+                    giveOut10 + "; 1$: " + giveOut1 + "; " + "\nСумма к выдаче: " + requiredCash);
         }
     }
 }
