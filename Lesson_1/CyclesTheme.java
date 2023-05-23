@@ -24,8 +24,8 @@ public class CyclesTheme {
         int num1 = 10;
         int num2 = 5;
         int num3 = -1;
-        int max;
-        int min;
+        int max = num1;
+        int min = num3;
         if (num1 < num2) {
             if (num1 < num3) {
                 min = num1;
@@ -34,14 +34,9 @@ public class CyclesTheme {
                 min = num3;
                 max = num2;
             }
-        } else {
-            if (num2 < num3) {
-                min = num2;
-                max = num3;
-            } else {
-                min = num3;
-                max = num1;
-            }
+        } else if (num2 < num3) {
+            min = num2;
+            max = num3;
         }
         System.out.print("Числа в интервале (" + min + ", " + max + "), в порядке убывания: ");
         for (int i = (max - 1); i > min && i < max; i--) {
@@ -52,11 +47,10 @@ public class CyclesTheme {
         System.out.println("\n\n3.Вывод реверсивного числа и суммы его цифр");
         int givenNum = 1234;
         int copyGivenNum = givenNum;
-        int digit = 0;
         int sumDigits = 0;
         System.out.print("Исходное число в обратном порядке = ");
         while (copyGivenNum > 0) {
-            digit = copyGivenNum % 10;
+            int digit = copyGivenNum % 10;
             System.out.print(digit);
             sumDigits += digit;
             copyGivenNum /= 10;
@@ -84,20 +78,20 @@ public class CyclesTheme {
 
         //5.Проверка количества двоек на четность/нечетность
         System.out.println("\n5.Проверка количества двоек на четность/нечетность");
-        int setNum = 3242592;
-        int copySetNum = setNum;
+        givenNum  = 3242592;
+        copyGivenNum  = givenNum;
         int countTwos = 0; 
-        while (copySetNum > 0) {
-            if (copySetNum % 10 == 2) {
+        while (copyGivenNum  > 0) {
+            if (copyGivenNum  % 10 == 2) {
                 countTwos++;
             }
-            copySetNum /= 10;
+            copyGivenNum  /= 10;
         }
         if (countTwos % 2 == 0) {
-            System.out.println("Число " + setNum + 
+            System.out.println("Число " + givenNum + 
                     " содержит чётное количество двоек, " + countTwos + ";");
         } else {
-            System.out.println("Число " + setNum + 
+            System.out.println("Число " + givenNum + 
                     " содержит нечётное количество двоек, " + countTwos + ";");
         }
 
@@ -110,65 +104,58 @@ public class CyclesTheme {
             System.out.println();
         }
 
-        int stringLengthLimit = 5;
-        int fillingStep = 1;
-        while (stringLengthLimit > 0) {
-            while (fillingStep <= stringLengthLimit) {
+        int countLines = 5;
+        int countSymbols = 1;
+        while (countLines > 0) {
+            while (countSymbols <= countLines) {
                 System.out.print("#");
-                fillingStep++;
+                countSymbols++;
             }
             System.out.println();
-            fillingStep = 1;
-            stringLengthLimit--;
+            countSymbols = 1;
+            countLines--;
         }
 
-        int limitStringLength = 1;
-        int printingStep = 1;
+        countLines = 1;
+        countSymbols = 1;
+        int maxSymbols = 3;
+        int currentLineLimit = 1;
         do {
             do {
                 System.out.print("$");
-                printingStep++;
-            } while (printingStep <= limitStringLength);
+                countSymbols++;
+            } while (countSymbols <= currentLineLimit);
             System.out.println();
-            printingStep = 1;
-            limitStringLength++;
-        } while (limitStringLength > 0 && limitStringLength < 3);
-        do {
-            do {
-                System.out.print("$");
-                printingStep++;
-            } while (printingStep <= limitStringLength);
-            System.out.println();
-            printingStep = 1;
-            limitStringLength--;
-        } while (limitStringLength > 0);
+            countSymbols = 1;
+            countLines++;
+            if (countLines <= maxSymbols) {
+                currentLineLimit++;
+            } else {
+                currentLineLimit = 2 * maxSymbols - countLines;
+            }
+        } while (countLines <= 5);
 
         //7.Отображение ASCII-символов
         System.out.println("\n7.Отображение ASCII-символов");
         System.out.printf("%4s %4s %n", "Dec", "Char");
         for (int i = 0; i <= 122; i++) {
             if (i >= 0 && i <= 47 && i % 2 != 0) {
-                System.out.printf("%4d", i);
-                System.out.printf("%4c%n", i);
+                System.out.printf("%4d%4c%n", i, i);
             } else if (i >= 97 && i % 2 == 0) {
-                System.out.printf("%4d", i);
-                System.out.printf("%4c%n", i, i);
+                System.out.printf("%4d%4c%n", i, i);
             }
         }
 
         //8.Проверка, является ли число палиндромом
         System.out.println("\n8.Проверка, является ли число палиндромом");
-        long palindrome = 12345654321L;
+        long palindrome = 696696L;
         long copyPalindrome = palindrome;
-        long unknown = 0;
+        long testPalindrome  = 0;
         while (copyPalindrome > 0) {
-            unknown += copyPalindrome % 10;
+            testPalindrome = testPalindrome * 10 + copyPalindrome % 10;
             copyPalindrome /= 10;
-            if (copyPalindrome > 0) {
-                unknown *= 10;
-            }
         }
-        if (palindrome == unknown) {
+        if (palindrome == testPalindrome) {
             System.out.println("Вау, число " + palindrome + " настоящий ПАЛИНДРОМ!");
         } else {
             System.out.println("Эксперты утверждают, что число " + palindrome + " не ПАЛИНДРОМ!");
@@ -179,13 +166,11 @@ public class CyclesTheme {
         int luckyNum = 999999;
         int partFirst = luckyNum / 1000;
         int sumFirstDigits = 0;
-        while (partFirst > 0) {
-            sumFirstDigits += partFirst % 10;
-            partFirst /= 10;
-        }
         int partLast = luckyNum % 1000;
         int sumLastDigits = 0;
-        while (partLast > 0) {
+        while (partFirst > 0 && partLast > 0) {
+            sumFirstDigits += partFirst % 10;
+            partFirst /= 10;
             sumLastDigits += partLast % 10;
             partLast /= 10;
         }
