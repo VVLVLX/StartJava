@@ -4,8 +4,9 @@ public class Calculator {
         System.out.println("Калькулятор");
         int a = 12;
         int b = 0;
-        char sign = '/';
-        if (a % 1 == 0 && a >= 0 && b % 1 == 0 && b >= 0) {
+        char sign = '-';
+        boolean isCorrectNumber = a % 1 == 0 && a >= 0 && b % 1 == 0 && b >= 0;
+        if (isCorrectNumber == true) {
             int result = 1;
             switch(sign) {
                 case '+':
@@ -20,6 +21,7 @@ public class Calculator {
                 case '/':
                     if (b == 0) {
                         System.out.println("Ошибка! На ноль делить нельзя!");
+                        return;
                     } else {
                         result = a / b;
                     }
@@ -30,11 +32,12 @@ public class Calculator {
                     }
                     break;
                 case '%':
-                    result = a + b;
+                    result = a % b;
                     break;
                 default:
                     System.out.println("Ошибка! Можно вводить только знаки" +
                             " арифметических операций: +, -, *, /, ^, %");
+                    return;
             }
             System.out.println(a + "" + sign + "" + b + "=" + "" + result);
         } else {
