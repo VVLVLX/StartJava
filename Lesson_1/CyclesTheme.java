@@ -26,14 +26,11 @@ public class CyclesTheme {
         int num3 = -1;
         int max = num1;
         int min = num3;
-        if (num1 < num2) {
-            if (num1 < num3) {
-                min = num1;
-                max = num3;
-            } else {
-                min = num3;
-                max = num2;
-            }
+        if (num1 < num2 && num1 < num3) {
+            min = num1;
+            max = num3;
+        } else if (num1 < num2 && num1 > num3) {
+            max = num2;
         } else if (num2 < num3) {
             min = num2;
             max = num3;
@@ -78,14 +75,14 @@ public class CyclesTheme {
 
         //5.Проверка количества двоек на четность/нечетность
         System.out.println("\n5.Проверка количества двоек на четность/нечетность");
-        givenNum  = 3242592;
-        copyGivenNum  = givenNum;
+        givenNum = 3242592;
+        copyGivenNum = givenNum;
         int countTwos = 0; 
-        while (copyGivenNum  > 0) {
-            if (copyGivenNum  % 10 == 2) {
+        while (copyGivenNum > 0) {
+            if (copyGivenNum % 10 == 2) {
                 countTwos++;
             }
-            copyGivenNum  /= 10;
+            copyGivenNum /= 10;
         }
         if (countTwos % 2 == 0) {
             System.out.println("Число " + givenNum + 
@@ -164,19 +161,19 @@ public class CyclesTheme {
         //9.Определение, является ли число счастливым
         System.out.println("\n9.Определение, является ли число счастливым");
         int luckyNum = 999999;
-        int partFirst = luckyNum / 1000;
-        int sumFirstDigits = 0;
-        int partLast = luckyNum % 1000;
-        int sumLastDigits = 0;
-        while (partFirst > 0 && partLast > 0) {
-            sumFirstDigits += partFirst % 10;
-            partFirst /= 10;
-            sumLastDigits += partLast % 10;
-            partLast /= 10;
+        int leftHalf = luckyNum / 1000;
+        int sumLeftDigits = 0;
+        int rightHalf = luckyNum % 1000;
+        int sumRightDigits = 0;
+        while (rightHalf > 0) {
+            sumLeftDigits += leftHalf % 10;
+            leftHalf /= 10;
+            sumRightDigits += rightHalf % 10;
+            rightHalf /= 10;
         }
-        boolean isLucky = sumFirstDigits == sumLastDigits;
-        System.out.println("Сумма цифр " + (luckyNum / 1000) + " = " + sumFirstDigits + "; " + 
-                "Сумма цифр " + (luckyNum % 1000) + " = " + sumLastDigits + ";\n" + 
+        boolean isLucky = sumLeftDigits == sumRightDigits;
+        System.out.println("Сумма цифр " + (luckyNum / 1000) + " = " + sumLeftDigits + "; " + 
+                "Сумма цифр " + (luckyNum % 1000) + " = " + sumRightDigits + ";\n" + 
                 (isLucky ? luckyNum + " - Счастливое число!" : luckyNum + " - Обычное число."));
 
         //10.Вывод таблицы умножения Пифагора
