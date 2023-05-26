@@ -157,46 +157,26 @@
 
         //9.Подсчет количества банкнот
         System.out.println("\n9.Подсчет количества банкнот");
-        int CashOut = 574;
-        int out100 = CashOut / 100;
-        int out10 = (CashOut / 10) % 10;
-        int out1 = CashOut % 10;
-        int available100 = 10;
-        int available10 = 5;
-        int available1 = 50;
-        int change101 = (out10 - available10) * 10 + out1;
-        int change1001 = (((out100 - available100) * 10) - available10) * 10 + out1;
-        int change10010 = (out100 - available100) * 10 + out10;
-        boolean isEnough100 = available100 >= out100;
-        boolean isEnough10 = available10 >= out10;
-        boolean isEnough1 = available1 >= out1;        
-        boolean isNotEnoughTotal = (isEnough100 == true &&
-                ((isEnough10 == true && isEnough1 == false)
-                || (available1 < change101))) ||
-                (isEnough100 == false &&
-                ((available10 >= change10010 && isEnough1 == false)
-                || (available10 < change10010 && available1 < change1001)));
-        if (isNotEnoughTotal == true) {
-            System.out.println ("Недостаточно банкнот для выдачи требуемой суммы!");
-        } else {
-            int giveOut100 = out100;
-            int giveOut10 = out10;
-            int giveOut1 = out1;
-            if (isEnough100 == false && available10 < change10010 && available1 >= change1001) {
-                giveOut100 = available100;
-                giveOut10 = available10;
-                giveOut1 = change1001;
-            } else if (isEnough100 == false && available10 > change10010 && isEnough1 == true) {
-                giveOut100 = available100;
-                giveOut10 = change10010;
-                giveOut1 = out1;
-            } else if (isEnough100 == true && isEnough10 == false && available1 >= change101) {
-                giveOut100 = out100;
-                giveOut10 = available10;
-                giveOut1 = change101;
-            }
-            System.out.println("Требуемое количество банкнот: 100$: " + giveOut100 + "; 10$: " +
-                    giveOut10 + "; 1$: " + giveOut1 + "; " + "\nСумма к выдаче: " + CashOut);
+        int available100 = 0;
+        int available10 = 50;
+        int available1 = 74;
+        int cashOut = 574;
+        System.out.println("\tСумма = " + cashOut);
+        int out100 = cashOut / 100;
+        if (out100 > available100) {
+            out100 = available100;    
         }
+        cashOut -= 100 * out100;
+        int out10 = cashOut / 10;        
+        if (out10 > available10) {
+            out10 = available10;    
+        }
+        cashOut -= 10 * out10;
+        int out1 = cashOut;
+        if (out1 > available1) {
+            out1 = available1;    
+        }        
+        System.out.println("\t100: " + out100 + "\n\t10: " + out10 + "\n\t1: " + out1 +
+                "\n\tВыдаваемая сумма: " + (out100 * 100 + out10 * 10 + out1));
     }
 }
