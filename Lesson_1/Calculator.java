@@ -6,7 +6,7 @@ public class Calculator {
         int b = 0;
         char sign = '-';
         boolean isCorrectNumber = a % 1 == 0 && a >= 0 && b % 1 == 0 && b >= 0;
-        if (isCorrectNumber == true) {
+        if (isCorrectNumber) {
             int result = 1;
             switch(sign) {
                 case '+':
