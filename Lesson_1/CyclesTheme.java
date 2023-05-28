@@ -21,21 +21,19 @@ public class CyclesTheme {
 
         //2.Вывод чисел в интервале (min и max) в порядке убывания
         System.out.println("\n2.Вывод чисел в интервале (min и max) в порядке убывания");
-        int num1 = -1;
+        int num1 = 10;
         int num2 = 5;
-        int num3 = 10;
+        int num3 = -1;
         int min = num1;
         int max = num2;
-        if (num2 <  num1 && num1 < num3) {
-            min = num2;
-            max = num3;
-        } else if (num2 <  num3 && num3 < num1) {
+        if (num2 < num1) {
             min = num2;
             max = num1;
-        } else if (num3 < num2 && num2 < num1) {
+        }
+        if (num3 < min) {
             min = num3;
-            max = num1;
-        } else if (num1 < num2 && num2 < num3) {
+        }
+        if (num3 > max) {
             max = num3;
         }
         System.out.print("Числа в интервале (" + min + ", " + max + "), в порядке убывания: ");
