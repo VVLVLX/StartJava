@@ -70,4 +70,3 @@ class AdvancedWolf {
     public void hunt() {
         System.out.println("Охотится");
     }
-}

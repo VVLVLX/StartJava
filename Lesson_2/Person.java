@@ -27,7 +27,3 @@ class Person {
         System.out.println("Рассказывает интересную историю");
     }
 }
-
-
-
-

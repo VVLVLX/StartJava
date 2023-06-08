@@ -12,4 +12,3 @@ public class SimpleWolfTest {
         firstWolf.howl();
         firstWolf.hunt();
     }
-}

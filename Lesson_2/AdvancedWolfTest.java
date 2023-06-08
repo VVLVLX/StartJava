@@ -17,4 +17,3 @@ public class AdvancedWolfTest {
         firstWolf.howl();
         firstWolf.hunt();
     }
-}

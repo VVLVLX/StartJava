@@ -35,4 +35,3 @@ class GuessNumber {
         } while (playerNumber != hiddenNumber);
         return winner;
     }
-}

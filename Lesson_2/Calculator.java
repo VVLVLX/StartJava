@@ -1,5 +1,3 @@
-//физкульт привет
-
 import java.util.Scanner;
 
 class Calculator {
@@ -104,4 +102,3 @@ class Calculator {
             }
         return calculate;
     }
-}

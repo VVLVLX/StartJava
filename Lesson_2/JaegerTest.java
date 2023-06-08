@@ -20,4 +20,3 @@ public class JaegerTest {
                 jaeger2.getName(), jaeger2.getStrength(),
                 jaeger2.getArmor(), jaeger2.getWeapon(), jaeger2Move);
     }
-}

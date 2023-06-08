@@ -23,4 +23,3 @@ public class CalculatorTest {
             } while (!userAnswer.equals("yes") && !userAnswer.equals("no"));
         } while (userAnswer.equals("yes"));
     }
-}

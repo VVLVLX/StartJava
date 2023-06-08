@@ -31,4 +31,3 @@ class GuessNumberTest {
             } while (checkWrongAnswer);
         } while (checkPositiveAnswer);
     }
-}

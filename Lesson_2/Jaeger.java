@@ -52,4 +52,3 @@ class Jaeger {
         this.armor = armor;
         this.weapon = weapon;
     }
-}

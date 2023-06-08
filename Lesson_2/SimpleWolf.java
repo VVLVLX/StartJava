@@ -34,4 +34,3 @@ class SimpleWolf {
     void hunt() {
         System.out.println("Охотится");
     }
-}
