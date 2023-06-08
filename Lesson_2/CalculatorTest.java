@@ -6,15 +6,53 @@ public class CalculatorTest {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Калькулятор");
         Calculator calculator = new Calculator();
-        String userAnswer;
+        int num1 = 0;
+        boolean isNumRight = true;
+        char operator = '+';
+        char[] operators = {'+', '-', '*', '/', '^', '%'};
+        boolean isOperatorRight = true;
+        int num2 = 0;
+        String userAnswer = "";
+        int calculate = 0;
         do {
-            int num1 = 0;
+            do {
+                System.out.print("Введите число: ");
+                num1 = scanner.nextInt();
+                isNumRight = (num1 >= 0 && num1 % 1 == 0);
+                if (!isNumRight) {
+                    System.out.println("Ошибка! Можно вводить только целые, "
+                            + "положительные числа!");
+                }
+            } while (!isNumRight);
             calculator.setNum1(num1);
-            char operator = '+';
+            do {
+                System.out.print("Введите знак математической операции: ");
+                operator = scanner.next().charAt(0);
+                for (int i = 0; i < operators.length; i++) {
+                    if (operator == operators[i]) {
+                        isOperatorRight = true;
+                        break;
+                    } else {
+                        isOperatorRight = false;
+                    }
+                }
+                if (!isOperatorRight) {
+                    System.out.println("Ошибка! Можно вводить только знаки" +
+                            " арифметических операций: +, -, *, /, ^, %");
+                }
+            } while (!isOperatorRight);
             calculator.setOperator(operator);
-            int num2 = 0;
+            do {
+                System.out.print("Введите число: ");
+                num2 = scanner.nextInt();
+                isNumRight = (num2 >= 0 && num1 % 1 == 0);
+                if (!isNumRight) {
+                    System.out.println("Ошибка! Можно вводить только целые, "
+                            + "положительные числа!");
+                }
+            } while (!isNumRight);
             calculator.setNum2(num2);
-            int calculate = calculator.calculate(num1, operator, num2);
+            calculate = calculator.calculate(num1, operator, num2);
             System.out.println(calculator.getNum1() + " " + calculator.getOperator() + " "
                     + calculator.getNum2() + " = " + calculate);
             do {
@@ -23,3 +61,4 @@ public class CalculatorTest {
             } while (!userAnswer.equals("yes") && !userAnswer.equals("no"));
         } while (userAnswer.equals("yes"));
     }
+}
