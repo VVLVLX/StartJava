@@ -1,11 +1,6 @@
-import java.util.Scanner;
-
 class Calculator {
-    Scanner scanner = new Scanner(System.in);
 
     private int num1;
-    private char operator;
-    private int num2;
 
     public void setNum1(int num1) {
         this.num1 = num1;
@@ -15,6 +10,8 @@ class Calculator {
         return num1;
     }
 
+    private char operator;
+
     public void setOperator(char operator) {
         this.operator = operator;
     }
@@ -23,6 +20,8 @@ class Calculator {
         return operator;
     }
 
+    private int num2;
+    
     public void setNum2(int num2) {
         this.num2 = num2;
     }
@@ -31,8 +30,7 @@ class Calculator {
         return num2;
     }
 
-    public int calculate(int num1, char operator, int num2) {
-        int result = 1;
+    public int calculate() {
         switch(operator) {
             case '+':
                 return num1 + num2;
@@ -44,10 +42,10 @@ class Calculator {
                 if (num2 == 0) {
                     System.out.println("Ошибка! На ноль делить нельзя!");
                     break;
-                } else {
-                    return num1 / num2;
                 }
+                return num1 / num2;
             case '^':
+                int result = 1;
                 for (int i = 1; i <= num2; i++) {
                     result *= num1;
                 }
@@ -57,7 +55,7 @@ class Calculator {
             default:
                 System.out.println("Ошибка! Можно вводить только знаки" +
                         " арифметических операций: +, -, *, /, ^, %");
-            }
-        return result;
+        }
+        return 0;
     }
 }
